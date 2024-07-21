@@ -22,6 +22,7 @@ function Products() {
             }
             return () => {
                 componentMounted = false;
+                console.log("rong")
             }
         }
 
@@ -62,9 +63,8 @@ function Products() {
                 </div>
                 {filter.map((product) => {
                     return (
-                        <>
-                            <div className="col-md-3 my-5" >
-                                <div className="card h-100 text-center p-4"  key={product.id}>
+                            <div className="col-md-3 my-5" key={product.id} >
+                                <div className="card h-100 text-center p-4"  >
                                     <img src={product.image} className="card-img-top" alt={product.title} height="250px" />
                                         <div className="card-body">
                                             <h5 className="card-title">{product.title.substring(0,12)}...</h5>
@@ -73,7 +73,6 @@ function Products() {
                                         </div>
                                 </div>
                             </div>
-                        </>
                     )
                 })};
             </>
